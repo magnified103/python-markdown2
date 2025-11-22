@@ -13,7 +13,7 @@ was written to closely match the behaviour of the original Perl-implemented
 Markdown.pl. Markdown2 also comes with a number of extensions (called
 "extras") for things like syntax coloring, tables, header-ids. See the
 "Extra Syntax" section below. "markdown2" supports all Python versions
-2.6+ or 3.3+ (and pypy and jython, though I don't frequently test those).
+3.5+ (and pypy and jython, though I don't frequently test those).
 
 There is another [Python
 markdown.py](https://python-markdown.github.io/). However, at
@@ -33,6 +33,7 @@ for updates to python-markdown2.
 To install it in your Python installation run *one* of the following:
 
     pip install markdown2
+    pip install markdown2[all]  # to install all optional dependencies (eg: Pygments for code syntax highlighting)
     pypm install markdown2      # if you use ActivePython (activestate.com/activepython)
     easy_install markdown2      # if this is the best you have
     python setup.py install
@@ -48,14 +49,14 @@ As a module:
 ```python
 >>> import markdown2
 >>> markdown2.markdown("*boo!*")  # or use `html = markdown_path(PATH)`
-u'<p><em>boo!</em></p>\n'
+'<p><em>boo!</em></p>\n'
 
 >>> from markdown2 import Markdown
 >>> markdowner = Markdown()
 >>> markdowner.convert("*boo!*")
-u'<p><em>boo!</em></p>\n'
+'<p><em>boo!</em></p>\n'
 >>> markdowner.convert("**boom!**")
-u'<p><strong>boom!</strong></p>\n'
+'<p><strong>boom!</strong></p>\n'
 ```
 As a script (CLI):
 ```shell
@@ -88,7 +89,7 @@ as a script:
 ```shell
 >>> import markdown2
 >>> markdown2.markdown("*boo!*", extras=["footnotes"])
-u'<p><em>boo!</em></p>\n'
+'<p><em>boo!</em></p>\n'
 ```
 There are a number of currently implemented extras for tables, footnotes,
 syntax coloring of `<pre>`-blocks, auto-linking patterns, table of contents,

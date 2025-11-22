@@ -30,7 +30,12 @@ Topic :: Text Processing :: Filters
 Topic :: Text Processing :: Markup :: HTML
 """
 
-script = (sys.platform == "win32" and "lib\\markdown2.py" or "bin/markdown2")
+extras_require = {
+    "code_syntax_highlighting": ["pygments>=2.7.3"],
+    "wavedrom": ["wavedrom; python_version>='3.7'"]
+}
+# nested listcomp to combine all optional extras into convenient "all" option
+extras_require["all"] = [i for v in tuple(extras_require.values()) for i in v]
 
 setup(
     name="markdown2",
@@ -44,9 +49,14 @@ setup(
     platforms=["any"],
     py_modules=["markdown2"],
     package_dir={"": "lib"},
-    scripts=[script],
+    entry_points={
+        "console_scripts": [
+            "markdown2 = markdown2:main"
+        ]
+    },
     description="A fast and complete Python implementation of Markdown",
     python_requires=">=3.5, <4",
+    extras_require=extras_require,
     classifiers=classifiers.strip().split("\n"),
     long_description="""markdown2: A fast and complete Python implementation of Markdown.
 

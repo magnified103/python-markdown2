@@ -1,8 +1,125 @@
 # python-markdown2 Changelog
 
-## python-markdown2 2.4.2 (not yet released)
+## python-markdown2 2.4.13
+
+- [pull #559] Allow cuddled tables (#557)
+- [pull #560] Fix `markdown-in-html` not always splitting HTML tags into separate lines (#558)
+- [pull #564] Fix incomplete comments in safe mode not being escaped (#563)
+- [pull #566] Fix crash in `markdown-in-html` extra (#565)
+
+
+## python-markdown2 2.4.12
+
+- [pull #547] Update `markdown-in-html` extra to handle markdown on same line as HTML (#546)
+- [pull #550] Fix tables with trailing whitespace not being recognized (#549)
+- [pull #545] Fix multiple instances of strong emphasis (`**`) in one line (#541)
+- [pull #556] Fix incorrect parsing of links after square brackets (#552)
+
+## python-markdown2 2.4.11
+
+- [pull #524] Fix angles being escaped in style blocks (issue #523)
+- [pull #527] Fix base64 images being corrupted in safe mode (issue #526)
+- [pull #529] Add `breaks` extra with ability to hard break on backslashes (issue #525)
+- [pull #532] Fix #493 persisting when `code-friendly` extra enabled
+- [pull #535] Update `_slugify` to use utf-8 encoding (issue #534)
+- [pull #536] Maintain order of appearance in footnotes
+- [pull #538] Include HTML headers in TOC
+- [pull #540] Add mechanism to prevent header ID counter resetting (issue #530)
+
+## python-markdown2 2.4.10
+
+- [pull #520] Allow more relative links in safe mode (issue #517)
+- [pull #521] Always restore hashed HTML blocks (issue #185)
+- [pull #522] Add `middle-word-em` extra
+
+
+## python-markdown2 2.4.9
+
+- [pull #500] Add `<thead>` tag to html-classes extra
+- [pull #501] Fix link patterns extra matching against internal hashes
+- [pull #502] Replace deprecated `optparse` with `argparse`
+- [pull #506] Fix `_uniform_outdent` failing with empty strings (issue #505)
+- [pull #509] Fix HTML elements not unhashing correctly (issue 508)
+- [pull #511] Remove deprecated `imp` module (issue #510)
+- [pull #512] Allow link patterns to be passed via extras dict
+- [pull #513] Fix relative links not working in safe mode (issue #254)
+
+
+## python-markdown2 2.4.8
+
+- [pull #499] Fix images not being procesed correctly (#498)
+
+
+## python-markdown2 2.4.7
+
+- [pull #483] Fix hashing nested HTML blocks
+- [pull #486] Fix backslash being unable to escape raw HTML tags
+- [pull #482] Add support for telegram spoiler in extras
+- [pull #485] mermaid support
+- [pull #487] Fix escaping ampersands in hrefs
+- [pull #490] Fix indented codeblocks inside fences (#489)
+- [pull #490] Remove `code-color` extra
+
+
+## python-markdown2 2.4.6
+
+- [pull #477] Feature wavedrom support
+- [pull #480] Fix mixing ordered and un-ordered lists combining into single list type
+
+
+## python-markdown2 2.4.5
+
+- [pull #466] Add optional dependencies to `setup.py`
+
+
+## python-markdown2 2.4.4
+
+- [pull #439] Fix TypeError if html-classes extra is None
+- [pull #441] Remove Python2 support
+- [pull #445] Replace `<strike>` with `<s>` in strike extra
+- [pull #446] Fix link patterns extra applying within links
+- [pull #443] create proper entry point
+- [pull #449] Codespans inside link text issue344
+- [pull #451] Underline and HTML comments
+- [pull #453] Links with brackets
+- [pull #454] Fix emacs local variable one-liners
+- [pull #457] Example of the current mixed-paragraph mode behavior in lists
+- [pull #455] Fix code block indentation in lists
+- [pull #434] Fix filter bypass leading to XSS (#362)
+- [pull #464] Fix html-classes extra not applying to code spans
+- [pull #462] Fix pygments block matching
+- [pull #462] Fix pyshell blocks in blockquotes
+- [pull #463] Fix multilevel lists
+- [pull #468] Remove `_uniform_outdent_limit` function
+- [pull #470] Add support for ordered lists that don't start at 1. (#469)
+- [pull #472] Fix `AssertionError` with lazy numbered lists (issue #471)
+- [pull #475] Add `<ul>` and `<ol>` tags to html-classes extra (#352)
+- [pull #473] XSS test and fix
+
+
+## python-markdown2 2.4.3
+
+- [pull #413] Fix meta indentation
+- [pull #414] Fix code surrounded by blank lines inside blockquote fenced code blocks
+- [pull #417] Fix inline code pipe symbol within tables (issue #399)
+- [pull #418] Fix code block parsing error (issue #327)
+- [pull #419] Fix hr block created when not supposed to (issue #400)
+- [pull #421] Fix backslashes removed by adjacent code blocks (issues #369 and #412)
+- [pull #420] Fix md5-* in resulting HTML when several code blocks follow one by one (issue #355)
+- [pull #422] Fix excessive `<br>` tags in lists using break-on-newline extra (issue #394)
+- [pull #424] Standardize key and value definitions for metadata extra (issue #423)
+- [pull #427] Fix fenced code blocks breaking lists (issue #426)
+- [pull #429] Fix catastrophic backtracking (Regex DoS) in pyshell blocks.
+- [pull #431] Fix incorrect indentation of fenced code blocks within lists
+- [pull #436] RST admonitions
+- [pull #430] Improve error message if link_patterns forgotten
+- [pull #437] fix compatibility with pygments 2.12
+
+
+## python-markdown2 2.4.2
 
 - [pull #408] Fix for fenced code blocks issue #396
+- [pull #410] Be more strict on auto linking urls, RE DOS fix
 
 
 ## python-markdown2 2.4.1
